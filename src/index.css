@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Fraunces", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: #F4F8F7;
+    color: #0F172A;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-serif);
+    text-wrap: balance;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom architectural drafting grid background for CAD canvas */
+.blueprint-grid {
+  background-color: #FAFDFC;
+  background-image:
+    linear-gradient(to right, rgba(15, 118, 110, 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 118, 110, 0.055) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.z2o-gradient-bar {
+  background: linear-gradient(90deg, #10B981 0%, #0D9488 45%, #2563EB 100%);
+}
+
+@media print {
+  body {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-break-before {
+    break-before: page;
+  }
+}
